@@ -1,0 +1,25 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block 'title' %}Inicio{% endblock %}
+
+{% block 'content' %}
+<h1>Bienvenido a tu Gestor Personal</h1>
+
+<div class="contenedor">
+    <div class="contact tarjeta">
+        <a href="{% url 'contact' %}">
+            <h2>Contactos</h2>
+            <img src="{% static 'img/contact.jpg' %}" alt="">
+        </a>
+    </div>
+
+    <div class="todo tarjeta">
+        <a href="{% url 'todo' %}">
+            <h2>Tareas</h2>
+            <img src="{% static 'img/todo.jpg' %}" alt="">
+        </a>
+    </div>
+
+</div>
+{% endblock %}

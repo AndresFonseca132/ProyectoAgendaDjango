@@ -1,0 +1,20 @@
+{% extends 'layout/base.html' %}
+
+{% block 'title' %}Tarea{% endblock %}
+{% block 'styles' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+{% endblock %}
+
+{% block 'content' %}
+<h2>Crear Tarea</h2>
+<span class="aux-btns"><a href="{% url 'todo' %}">Volver Atras</a></span>
+<form action="{% url 'todo_create'%}" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Crear" class="edit">
+</form>
+
+
+
+{% endblock %}

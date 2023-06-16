@@ -1,0 +1,13 @@
+<form action="{% url 'todo' %}" class="search" method="GET">
+    <input type="text" class="search-bar" name="search" placeholder="Buscar Tarea">
+    <input type="submit" value="Buscar" class="btn btn-search">
+</form>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<span class="aux-btns"><a href="{% url 'todo' %}">Ver todos</a> <a href="{% url 'todo_create' %}">Añadir</a></span>
